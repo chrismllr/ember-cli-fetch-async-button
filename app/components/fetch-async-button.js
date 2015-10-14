@@ -1,0 +1,1 @@
+export { default } from 'ember-cli-fetch-async-button/components/fetch-async-button';
