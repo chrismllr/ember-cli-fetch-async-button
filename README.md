@@ -22,6 +22,55 @@ https://github.com/stefanpenner/ember-fetch
 
 ## Usage
 
+Basic Usage
+
+### Template
+```
+{{fetch-async-button class="button"
+  asyncAction=(action "save")
+  default="Save"
+  pending="Saving..."
+  fulfilled="Saved!" }}
+```
+
+### Controller
+```
+save(cb) {
+  const user = Ember.Object.create({
+    user: {
+      name: this.get('name')
+    }
+  });
+
+  const promise = fetch(`/api/v2/users/${this.get('model.id')}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Data-Type': 'json'
+    },
+    body: JSON.stringify(user),
+    credentials: 'include'
+  });
+
+  cb(promise);
+
+  promise
+    .then(response => {
+      if (response.status >= 200 && response.status < 300) {
+        return response;
+      } else {
+        throw response;
+      }
+    })
+    .then(() => {
+      console.log('Successfully updated User');
+    })
+    .catch(err => {
+      console.log('Error updating user', err);
+    });
+},
+```
+
 
 ## Installation
 
