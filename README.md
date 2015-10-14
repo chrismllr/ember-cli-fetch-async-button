@@ -1,6 +1,7 @@
 
 # Ember-cli-fetch-async-button
 
+** IN DEVELOPMENT. **
 
 This addon is based on the Dockyard ember-cli addon 'ember-cli-async-button'...
 https://github.com/dockyard/ember-async-button
@@ -17,6 +18,9 @@ throwing that response as an error to the 'catch' handler, or returning onto the
 
 To use fetch with your ember application, I recommend installing stefanpenner's ember-fetch.
 https://github.com/stefanpenner/ember-fetch
+
+
+## Usage
 
 
 ## Installation
