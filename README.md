@@ -1,6 +1,17 @@
+
 # Ember-cli-fetch-async-button
 
-This README outlines the details of collaborating on this Ember addon.
+This addon is based on the Dockyard ember-cli addon 'ember-cli-async-button'...
+https://github.com/dockyard/ember-async-button
+
+Implemented with support for fetch. You can read more about fetch here.
+http://updates.html5rocks.com/2015/03/introduction-to-fetch
+https://github.com/github/fetch
+
+This adds the initial 'then' handler, which validates the response status before either
+throwing that response as an error to the 'catch' handler, or returning onto the successful
+'then' handler.
+
 
 ## Installation
 
