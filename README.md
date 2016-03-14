@@ -1,7 +1,6 @@
 
 # Ember-cli-fetch-async-button
 
-** IN DEVELOPMENT. **
 
 This addon is based on the Dockyard ember-cli addon 'ember-cli-async-button'...
 https://github.com/dockyard/ember-async-button
@@ -15,6 +14,9 @@ https://github.com/github/fetch
 This adds the initial 'then' handler, which validates the response status before either
 throwing that response as an error to the 'catch' handler, or returning onto the successful
 'then' handler.
+
+*v0.2.0 adds support to validate hashes and arrays of promises. This will cause the component to
+`throw` if any of the promises have an unsuccessful status code.*
 
 To use fetch with your ember application, I recommend installing stefanpenner's ember-fetch.
 https://github.com/stefanpenner/ember-fetch
