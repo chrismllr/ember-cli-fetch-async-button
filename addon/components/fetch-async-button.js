@@ -33,7 +33,27 @@ export default Ember.Component.extend({
 
       promise
         .then(status => {
-          if (status.status >= 200 && status.status < 300) {
+          if (status instanceof Array) { // array of promises
+            status.forEach(s => {
+              if (this._isError(s.status)) {
+                throw error;
+              }
+            });
+
+            return status;
+          }
+
+          if (status instanceof Object) { // hash of promises
+            Object.keys(status).forEach(k => {
+              if (this._isError(status[k].status)) {
+                throw status;
+              }
+            });
+
+            return status;
+          }
+
+          if (!this._isError(status.status)) {
             return status;
           } else {
             throw status;
