@@ -15,8 +15,9 @@ This adds the initial 'then' handler, which validates the response status before
 throwing that response as an error to the 'catch' handler, or returning onto the successful
 'then' handler.
 
-*v0.2.0 adds support to validate hashes and arrays of promises. This will cause the component to
-`throw` if any of the promises have an unsuccessful status code.*
+### Hashes and Arrays of promises
+v0.2.0 adds support to validate hashes and arrays of promises. The component will initialize
+the button's `rejected` state if any of the promises in the array or hash cause a `throw`.
 
 To use fetch with your ember application, I recommend installing stefanpenner's ember-fetch.
 https://github.com/stefanpenner/ember-fetch
