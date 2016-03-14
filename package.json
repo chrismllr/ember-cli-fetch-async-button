@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-fetch-async-button",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Button states, disabling, and promise handling for async actions. Built to support ember-fetch async calls.",
   "directories": {
     "doc": "doc",
