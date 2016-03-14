@@ -23,6 +23,10 @@ export default Ember.Component.extend({
     return getWithDefault(this, this.textState, get(this, 'default'));
   }),
 
+  _isError(code) {
+    return !(code >= 200 && code < 300);
+  },
+
   click() {
     const params = this.getWithDefault('params', []);
 
